@@ -399,7 +399,6 @@ display: flex;
 #botones_acerca a:hover{
     background-color: var(--amarillo);
     border-radius: 10px;
-    border-color: #000;
     color: #fff;
 
 
