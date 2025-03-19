@@ -172,12 +172,7 @@
                 </button>
             </div>
         </div>
-        <div id="botones_acerca">
-            <a href="#servicios" class="btn">Conoce más</a>
-            <a href="#contacto" class="btn">Contáctanos</a>
-            <a href="#contacto" class="btn">Experiencias</a>
-
-        </div>
+      
     </section>
 
 
@@ -254,10 +249,53 @@
                
             </div>
 
- 
-
-
-
+            <div id="botones_acerca">
+                <a href="#servicios" class="btn">Conoce más</a>
+                <a href="#contacto" class="btn">Contáctanos</a>
+                <a href="#contacto" class="btn">Experiencias</a>
+    
+            </div>
+<section id="hechos" class="hechos-reales">
+    <div id="encabezado-hechos">
+            <h1>Algunos de los <span style="color: #008cd0;">hechos reales</span> de nuestra empresa</h1>
+            <p>Como grupo de investigación reconocido por Minciencias desde el año 2010.
+                Gestión Tecnológica, </p>
+        </div>
+            <div class="container-hechos">
+                <div class="box">
+                    <h3>Acompañamientos en formulación</h3>
+                    <div class="number" data-target="1800">0</div>
+                </div>
+                <div class="box">
+                    <h3>Fortalecimientos I+D+I</h3>
+                    <div class="number" data-target="686">0</div>
+                </div>
+                <div class="box">
+                    <h3>Transferencias de conocimiento</h3>
+                    <div class="number" data-target="29">0</div>
+                </div>
+                <div class="box">
+                    <h3>Evaluación de proyectos de I+D+I</h3>
+                    <div class="number" data-target="2500">0</div>
+                </div>
+                <div class="box">
+                    <h3>Desarrollos de Software</h3>
+                    <div class="number" data-target="40">0</div>
+                </div>
+                <div class="box">
+                    <h3>Acompañamiento en productividad e innovación</h3>
+                    <div class="number" data-target="280">0</div>
+                </div>
+                <div class="box">
+                    <h3>Formulación y supervisión de inversiones I+D+I</h3>
+                    <div class="number" data-target="56">0</div>
+                </div>
+                <div class="box">
+                    <h3>Asesoramiento de Empresas</h3>
+                    <div class="number" data-target="40">0</div>
+                </div>
+            </div>
+        </section>
     <!-- Contacto -->
     <section id="contacto" class="contact">
         <div class="container">
@@ -363,7 +401,51 @@
             </div>
         </div>
     </footer>
-    
+    <script>
+   function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+function isElementOutOfViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return rect.bottom < 0 || rect.top > window.innerHeight;
+}
+
+function animateCounters() {
+    const counters = document.querySelectorAll(".number");
+    counters.forEach(counter => {
+        if (isElementInViewport(counter) && !counter.dataset.animated) {
+            counter.dataset.animated = "true";
+            const target = +counter.getAttribute("data-target");
+            let count = 0;
+            const increment = target / 100;
+            
+            const updateCounter = () => {
+                count += increment;
+                if (count < target) {
+                    counter.innerText = Math.floor(count);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            updateCounter();
+        } else if (isElementOutOfViewport(counter)) {
+            counter.dataset.animated = "";
+            counter.innerText = "0"; // Reiniciar a 0 cuando salga de la vista
+        }
+    });
+}
+
+document.addEventListener("scroll", animateCounters);
+
+    </script>
 </body>
 
 </html>
