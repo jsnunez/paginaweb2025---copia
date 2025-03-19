@@ -719,15 +719,18 @@ footer {
 
 .footer-links li {
     margin-bottom: 10px;
+    
 }
 
 .footer-links a {
     color: #aaa;
     transition: color 0.3s;
+    text-decoration: none;
+
 }
 
 .footer-links a:hover {
-    color: var(--azul-oscuro);
+    color: var(--amarillo);
 }
 
 .social-links {
@@ -738,7 +741,9 @@ footer {
 .social-icon {
     width: 40px;
     height: 40px;
-    background-color: #333;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: var(--azulclaro);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -747,7 +752,7 @@ footer {
 }
 
 .social-icon:hover {
-    background-color: var(--azul-oscuro);
+    background-color: var(--amarillo);
 }
 
 .copyright {
