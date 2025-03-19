@@ -70,7 +70,7 @@ header {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
-    height: 15vh;
+    height: 12vh;
     top: 0;
     z-index: 1000;
 }
@@ -200,6 +200,44 @@ header {
     cursor: pointer;
 }
 
+/* Contenedor de los iconos sociales */
+.social-icons {
+    position: fixed; /* Fijar la posición en la pantalla */
+    top: 50%; /* Centrado verticalmente */
+    right: 0; /* Alineado al borde derecho */
+    margin-right: 5vh;
+    transform: translateY(-50%); /* Centrado perfecto en el eje Y */
+    z-index: 9999; /* Asegura que los iconos estén encima de otros elementos */
+    display: none; /* Los iconos no se muestran por defecto */
+}
+
+/* Estilos para cada ícono */
+.social-icons a {
+    display: flex; /* Usamos flexbox para centrar el contenido */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    margin-bottom: 10px;
+    text-decoration: none;  /* Elimina el subrayado por defecto */
+
+    width: 50px;  /* Tamaño fijo para el contenedor del ícono */
+    height: 50px; /* Tamaño fijo para el contenedor del ícono */
+    background-color: var(--azulclaro); /* Fondo para los íconos */
+    border-radius: 50%; /* Hacer el contenedor circular */
+    color: white;
+    font-size: 1.5vw; /* Tamaño del ícono, se ajusta al tamaño de la ventana */
+    transition: background-color 0.3s ease; /* Efecto de hover */
+}
+
+.social-icons a:hover {
+    background-color: var(--amarillo); /* Cambio de color en hover */
+}
+
+/* Mostrar los iconos solo en pantallas grandes (desktop) */
+@media (min-width: 1024px) {
+    .social-icons {
+        display: block; /* Muestra los iconos solo en pantallas grandes */
+    }
+}
 /* Hero Section */
 .hero {
     height: 600px;
@@ -208,9 +246,10 @@ header {
     background-position: center;
     display: flex;
     align-items: center;
-    margin-top: 10vh;
-    height: 90vh;
+    margin-top: 12vh;
+    height: 88vh;
     position: relative;
+    padding-bottom: 12vh;
 }
 
 .hero::before {
@@ -220,6 +259,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
+    
     background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -239,13 +279,13 @@ header {
 
 .hero-content p {
     font-size: 18px;
-    margin-bottom: 30px;
+    margin-bottom: px;
 }
 
 /* Servicios */
 
 .services {
-    padding: 15vh 0;
+    padding: 12vh 0;
     background-color: #f9f9f9;
 }
 
