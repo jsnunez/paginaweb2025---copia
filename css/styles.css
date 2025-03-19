@@ -203,7 +203,7 @@ header {
 /* Hero Section */
 .hero {
     height: 600px;
-    background-image: url('/img/portada.jpg');
+    background-image: url('/assets/img/portada.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
